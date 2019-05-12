@@ -17,7 +17,15 @@ if (!localStorage.getItem('name')) {
     myHeading.textContent = 'Mozilla is cool, ' + storedName;
 }
 
-myImage.onclick = function () {
+myImage.onmouseover = function () {
+    var imageSource = myImage.getAttribute('src');
+    if (imageSource === 'images/firefox-logo.png') {
+        myImage.setAttribute('src', 'images/firefox-1-logo.png')
+    } else {
+        myImage.setAttribute('src', 'images/firefox-logo.png')
+    }
+}
+myImage.onmouseout = function () {
     var imageSource = myImage.getAttribute('src');
     if (imageSource === 'images/firefox-logo.png') {
         myImage.setAttribute('src', 'images/firefox-1-logo.png')
